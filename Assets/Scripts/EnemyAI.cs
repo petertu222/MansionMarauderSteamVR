@@ -107,7 +107,7 @@ public class EnemyAI : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Cube")
+        if(collision.gameObject.tag == "Player")
         {
             //Debug.Log("gotcha");
             SceneManager.LoadScene("MainMenu");

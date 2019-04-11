@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.newunityproject.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\Peter\\Documents\\GitHub\\MansionMarauderSteamVR\\actions.json",
+      "action_manifest_path": "D:\\GitHub\\MansionMarauderSteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "New Unity Project [Testing]"
