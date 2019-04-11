@@ -96,12 +96,12 @@ public class EnemyAI : MonoBehaviour
         if (isInFov)
         {
             anim.SetBool("canbeSeen", true);
+            spottedPlayer.Play();
         }
 
         if (!isInFov)
         {
             anim.SetBool("canbeSeen", false);
-            spottedPlayer.Play();
         }
     }
 

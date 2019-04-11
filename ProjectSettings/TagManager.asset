@@ -11,6 +11,7 @@ TagManager:
   - Trophy
   - Waypoint
   - Cube
+  - Floor
   layers:
   - Default
   - TransparentFX
