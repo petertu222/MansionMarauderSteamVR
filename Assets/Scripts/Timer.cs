@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    int seconds = 0;
-    int minutes = 3;
-    int fixedFrames = 90;
+    int seconds = 10;
+    int minutes = 1;
+    int fixedFrames = 60;
 
     public int playerScore;
 
@@ -24,7 +24,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(playerScore);
+        //Debug.Log(playerScore);
         decrementTime();
         timer.text = minutes + " : " + seconds;
         score.text = "Score: " + playerScore;
@@ -36,14 +36,14 @@ public class Timer : MonoBehaviour
         if(fixedFrames <= 0)
         {
             seconds--;
-            fixedFrames = 90;
+            fixedFrames = 60;
         }
         if (seconds <= 0)
         {
             minutes--;
             seconds = 59;
         }
-        if(minutes <= 0)
+        if(minutes < 0)
         {
             Scores.currentScore = playerScore;
             Scores.endGame = true;

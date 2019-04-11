@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class EnemyAI : MonoBehaviour
     public Transform Target;
     public float maxAngle;
     public float maxRadius;
+
+    public AudioSource spottedPlayer;
 
     private bool isInFov = false;
 
@@ -80,6 +83,7 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        spottedPlayer = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -97,8 +101,16 @@ public class EnemyAI : MonoBehaviour
         if (!isInFov)
         {
             anim.SetBool("canbeSeen", false);
+            spottedPlayer.Play();
         }
     }
 
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Cube")
+        {
+            Debug.Log("gotcha");
+            //SceneManager.LoadScene("MainMenu");
+        }
+    }
 }
