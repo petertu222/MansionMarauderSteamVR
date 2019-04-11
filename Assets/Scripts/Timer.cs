@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    int seconds = 10;
-    int minutes = 1;
+    int seconds = 0;
+    int minutes = 3;
     int fixedFrames = 60;
 
-    public int playerScore;
+    public int playerScore = 0;
 
     [SerializeField] Text timer;
     [SerializeField] Text score;
@@ -26,7 +26,7 @@ public class Timer : MonoBehaviour
     {
         //Debug.Log(playerScore);
         decrementTime();
-        timer.text = minutes + " : " + seconds;
+        timer.text = "Time: " + minutes + ": " + seconds;
         score.text = "Score: " + playerScore;
     }
 
