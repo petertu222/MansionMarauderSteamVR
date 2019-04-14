@@ -93,16 +93,16 @@ public class EnemyAI : MonoBehaviour
         //anim.SetFloat("distance", Vector3.Distance(transform.position, player.transform.position));
 
         isInFov = inFOV(transform, Target, maxAngle, maxRadius);
-        if (isInFov)
+        if (isInFov == true)
         {
             anim.SetBool("canbeSeen", true);
-            spottedPlayer.Play();
         }
 
         if (!isInFov)
         {
             anim.SetBool("canbeSeen", false);
         }
+       // Debug.Log(isInFov);
     }
 
     private void OnCollisionEnter(Collision collision)

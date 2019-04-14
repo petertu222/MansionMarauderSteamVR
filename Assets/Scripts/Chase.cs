@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Chase : EnemyBaseFSM
 {
-    float movespeed = 3.5f;
+    float movespeed = 1.0f;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
